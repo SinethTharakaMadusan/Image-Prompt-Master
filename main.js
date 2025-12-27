@@ -64,7 +64,7 @@ function copyTag(tag, element) {
         element.classList.add('copied-style');
         setTimeout(() => {
             element.innerText = tag;
-            element.classList.remove('copied-style');
+            
         }, 2000);
     }).catch(err => {
         console.error("Copy Failed", err)
