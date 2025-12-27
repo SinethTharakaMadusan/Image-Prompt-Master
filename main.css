@@ -90,8 +90,8 @@ body {
         linear-gradient(#fff, #fff) padding-box,
         linear-gradient(to right, #6366f1, #a855f7) border-box;
     border: 2px solid transparent;
-    padding: 15px;
-    padding-bottom: 50px;
+    padding: 20px;
+    padding-bottom: 100px;
     resize: none;
     font-family: inherit;
     border-radius: 15px;
