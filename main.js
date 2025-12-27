@@ -9,7 +9,7 @@ document.getElementById('genBtn').addEventListener('click', async () => {
     resultCard.classList.add('hidden');
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/get-image-data', {
+        const response = await fetch('/get-image-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
