@@ -59,12 +59,19 @@ document.getElementById('imgName').addEventListener('click', () => copyToClipboa
 document.getElementById('imgDesc').addEventListener('click', () => copyToClipboard('imgDesc'));
 
 function copyTag(tag, element) {
+    if (element.classList.contains('copied-style')) {
+        element.classList.remove('copied-style');
+        element.innerText = tag; // Ensure text is reset just in case
+        return;
+    }
+
     navigator.clipboard.writeText(tag).then(() => {
         element.innerText = "Copied";
         element.classList.add('copied-style');
         setTimeout(() => {
-            element.innerText = tag;
-            
+            if (element.classList.contains('copied-style')) {
+                element.innerText = tag;
+            }
         }, 2000);
     }).catch(err => {
         console.error("Copy Failed", err)
