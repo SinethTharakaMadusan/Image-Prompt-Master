@@ -18,7 +18,7 @@ def get_image_data():
         user_prompt = data.get('user_prompt')
 
         response = client.models.generate_content(
-            model="gemini-2.5-flash", 
+            model="gemini-1.5-flash", 
             config={
                 'response_mime_type': 'application/json',
             },
