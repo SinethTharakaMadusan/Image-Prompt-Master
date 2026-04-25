@@ -9,6 +9,8 @@ load_dotenv('api.env')
 app = Flask(__name__)
 CORS(app)
 
+print("My API Key:", os.getenv("GEMINI_API_KEY"))
+
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 @app.route('/get-image-data', methods=['POST'])
@@ -18,7 +20,7 @@ def get_image_data():
         user_prompt = data.get('user_prompt')
 
         response = client.models.generate_content(
-            model="gemini-1.5-flash", 
+            model="gemini-2.5-flash", 
             config={
                 'response_mime_type': 'application/json',
             },
